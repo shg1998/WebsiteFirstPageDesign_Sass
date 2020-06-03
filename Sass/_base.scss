@@ -1,0 +1,56 @@
+$color-d: #262626;
+$color-black: #000;
+$color-primary: #d3ab55;
+$color-white: #ffffff;
+$color-secondary: #bbb;
+
+$font-josefin-Sans: "Josefin Sans", sans-serif;
+$font-dancing-script: "Dancing Script", cursive;
+$font-nunito: "Nunito", sans-serif;
+$font-sahel: Sahel, Tahoma;
+$font-Nastaliq: nastaliq, Tahoma;
+
+@font-face {
+    font-family: Sahel;
+    src: url(../fonts/Sahel.eot);
+    src: url(../fonts/Sahel.ttf) format("ttf"), url(../fonts/Sahel.woff) format("woff");
+    font-weight: normal;
+}
+@font-face {
+    font-family: nastaliq;
+    src: url(../fonts/IranNastaliq.ttf);
+    font-weight: normal;
+}
+@mixin align($value) {
+    position: absolute;
+    top: $value;
+    left: 50%;
+    //baraye oomadanesh be vasat:
+    transform: translate(-50%, -50%);
+}
+@mixin flex-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin texts {
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+@mixin nav-img-feature($color: $color-d) {
+    width: 50vw;
+    height: 100vh;
+    background-color: $color;
+    position: fixed;
+}
+%fullSpace {
+    width: 100%;
+    height: 100%;
+}
+* {
+    padding: 0;
+    margin: 0;
+}
+body {
+    background-color: $color-d;
+}

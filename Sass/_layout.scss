@@ -1,0 +1,177 @@
+.navbar {
+    position: relative;
+    z-index: 200;
+    .navigation {
+        display: flex;
+        &-left {
+            @include nav-img-feature($color-d);
+            left: -50vw;
+            transition: left 0.8s cubic-bezier(1, 0, 0, 1);
+            .left-img {
+                width: 50%;
+                position: absolute;
+                box-shadow: 0 15px 60px rgba($color-black, 0.4);
+                opacity: 0.7;
+                border-radius: 14px;
+            }
+            .left-img-1 {
+                top: 15%;
+                left: 15%;
+            }
+            .left-img-2 {
+                top: 35%;
+                left: 25%;
+            }
+            .left-img-3 {
+                top: 55%;
+                left: 35%;
+            }
+        }
+        &-right {
+            @include nav-img-feature(#1f1d1d);
+            right: -50vw;
+            @include flex-box;
+            transition: right 0.8s cubic-bezier(1, 0, 0, 1);
+        }
+        .nav-list {
+            &-item {
+                list-style: none;
+                text-decoration: none;
+            }
+            &-link {
+                font-family: $font-sahel;
+                font-size: 35px;
+                @include texts;
+                color: $color-secondary;
+                text-decoration: none;
+                display: block;
+                margin: 20px;
+                transition: all 0.5s;
+                text-align: center;
+                &:hover {
+                    color: $color-primary;
+                    letter-spacing: 3px;
+                }
+            }
+        }
+    }
+}
+.checkbox:checked ~ .navigation .navigation-left {
+    left: 0;
+}
+.checkbox:checked ~ .navigation .navigation-right {
+    right: 0;
+}
+.checkbox:checked ~ .hamburger-menu .menu {
+    transform: rotateZ(90deg);
+}
+
+.checkbox:checked ~ .hamburger-menu .menu-line-1 {
+    transform: rotateZ(-40deg);
+}
+.checkbox:checked ~ .hamburger-menu .menu-line-2 {
+    opacity: 0;
+}
+.checkbox:checked ~ .hamburger-menu .menu-line-3 {
+    transform: rotateZ(40deg);
+}
+.header {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background: linear-gradient(rgba($color-black, 0.8), rgba($color-black, 0.6)),
+        url(../images/salam1.jpg) center no-repeat;
+    background-size: cover;
+    .name {
+        @include align(15%);
+        display: flex;
+        align-items: center;
+    }
+    .banner {
+        text-align: center;
+        @include align(50%);
+    }
+}
+.about {
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    .about-us-1 {
+        width: 40%;
+        img {
+            width: 100%;
+            opacity: 0.7;
+            display: block;
+            border-radius: 50px;
+            margin-left: 20px;
+        }
+    }
+    .about-us-2 {
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0 80px;
+        box-sizing: border-box;
+        .star {
+            margin: 30px 0;
+        }
+        .str {
+            font-size: 15px;
+            color: $color-primary;
+            margin-left: 8px;
+        }
+        .desc {
+            font-family: $font-Nastaliq;
+            color: $color-secondary;
+            font-size: 30px;
+            direction: rtl;
+
+            text-align: justify;
+            &::first-letter {
+                padding-right: 34px;
+            }
+        }
+    }
+}
+.galery {
+    .itemsW {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+.footer {
+    margin-top: 100px;
+    padding: 70px 0;
+    @include flex-box;
+    flex-direction: column;
+    .header-1 {
+        display: flex;
+        align-items: center;
+        margin-bottom: 70px;
+    }
+    .social {
+        display: flex;
+        width: 300px;
+        justify-content: space-between;
+        margin-bottom: 40px;
+        &-item {
+            list-style: none;
+        }
+        &-link {
+            text-decoration: none;
+            font-size: 50px;
+            color: $color-secondary;
+            transition: color 0.7s;
+            &:hover {
+                color: $color-primary;
+            }
+        }
+    }
+    .foocpy {
+        font-family: $font-sahel;
+        font-size: 20px;
+        color: $color-secondary;
+        direction: rtl;
+    }
+}
